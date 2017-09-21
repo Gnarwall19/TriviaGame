@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Triva Game</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<div id="container">
+		<div id="game">
+			<div id="title-container">
+				<h1>Trivia Game</h1>
+			</div>
+			<div id="game-display">
+				<div id="timer">
+					<p id="intro">This will be a description of the game that is shown in the title screen and hidden once the game starts</p>
+					<span id="clock"><h3>TIME</h3></span>
+				</div>
+				<div id="question-container"> <!-- Each quetions will be appended to this div --> </div>
+				<div id="choices"> <!-- Answer choices will be appended to this div -->
+					<div class="answer-choice" id="a"></div>
+					<div class="answer-choice" id="b"></div>
+					<div class="answer-choice" id="c"></div>
+					<div class="answer-choice" id="d"></div>
+				</div>	
+				<br>
+				<button type="button" id="start">START</button>
+			</div>
+			<div id="correct-display">
+				<h3>CORRECT!</h3>
+				<!-- CORRECT ANSWER! MAY NEED MORE DIVS -->
+			</div>
+			<div id="wrong-display">
+				<h3>WRONG!</h3>
+				<!-- Wrong Answer! MAY NEED MORE DIVS -->
+			</div>
+			<div id="game-over">
+				<h3>GAME OVER</h3>
+			</div>
+		</div>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="assets/javascript/trivia.js"></script>
+	</body>
+	</html>
