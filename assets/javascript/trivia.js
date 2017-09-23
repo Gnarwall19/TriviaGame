@@ -4,39 +4,39 @@ $(document).ready( function() {
 var questions = [
 question1 =
 {
-	question: "The answer is a",
-	choices: ["a", "b", "c", "d"],
+	question: "How many Sages are there in Ocarina of Time?",
+	choices: ["7", "5", "10", "3"],
 	answer: 0
 },
 question2 =
 {
-	question: "The answer is b",
-	choices: ["a", "b", "c", "d"],
-	answer: 1
+	question: "By what name does Link's trusty boat and loquacious companion go by in Wind Waker?",
+	choices: ["King of Red Dragons", "King of Blue Lions", "King of Red Lions", "King of Blue Dragons"],
+	answer: 2
 },
 question3 =
 {
-	question: "The answer is c",
-	choices: ["a", "b", "c", "d"],
-	answer: 2
+	question: "Which game in the series was predominately a side scrolling adventure?",
+	choices: ["The Legend of Zelda", "Links Awakening", "Four Swords", "The Adventure of Link"],
+	answer: 3
 },
 question4 =
 {
-	question: "The answer is d",
-	choices: ["a", "b", "c", "d"],
-	answer: 3
+	question: "What is the name of the spirit residing within Link's sword in The Legend of Zelda: Skyward Sword?",
+	choices: ["Pi", "Fi", "Zi", "Ti"],
+	answer: 1
 },
 question5 =
 {
-	question: "The answer is a",
-	choices: ["a", "b", "c", "d"],
-	answer: 0
+	question: "What are the magic words that Tingle created himself?",
+	choices: ["Shoosho-Tinkah!", "Tingla-Minglah!", "Kooloo-Limpah!", "Lompah-Fumpah!"],
+	answer: 2
 },
 ];
 
 var correct = 0;
 var wrong = 0;
-var startAt = 10;			//chang this name
+var startAt = 10;
 var number = startAt;
 var userAnswer;
 var currentQuestion = 0;
@@ -63,11 +63,11 @@ function stop() {
 	clearInterval(counter);
 	clearTimeout(counter);
 	number = startAt;
-	wrongPage();				//unAnswered();					//Hopefully you can call wrong answer instead...
+	oOT();
 }
 
 //$("#reset").hide();
-	//song?
+
 
 $("#start").on("click", function() {
 	startGame();
@@ -81,7 +81,8 @@ function startGame() {
 	game();
 }
 
-function game() {		//THERE WILL BE ISSUES
+//Initializes game with the first questions after START button is pressed
+function game() {
 	$("#question-container").html(questions[currentQuestion].question);
 	$("#a").html(questions[currentQuestion].choices[0]);
 	$("#b").html(questions[currentQuestion].choices[1]);
@@ -90,10 +91,11 @@ function game() {		//THERE WILL BE ISSUES
 }
 
 
-
+//Displays new questions after inBetween timer is finished
 function nextQuestion() {
 	$("#correct-display").hide();
 	$("#wrong-display").hide();
+	$("oOT-display").hide();
 	$("#question-container").show();
 	$("#choices").show();
 	currentQuestion++;
@@ -146,8 +148,8 @@ function answerCompare() {
 }
 
 function correctPage() {
-	$("#question-container").hide(); 		//.empty()?
-	$("#choices").hide();								//just hide #game-display
+	$("#question-container").hide();
+	$("#choices").hide();
 	$("#correct-display").show();
 	correct++;
 	console.log(correct);
@@ -156,9 +158,19 @@ function correctPage() {
 }
 
 function wrongPage() {
-	$("#question-container").hide(); 		//.empty()?
-	$("#choices").hide();								//just hide #game-display
+	$("#question-container").hide();
+	$("#choices").hide();
 	$("#wrong-display").show();
+	wrong++;
+	console.log(wrong);
+	number = startAt;
+	run2();
+}
+
+function oOT() {
+	$("#question-container").hide();
+	$("#choices").hide();
+	$("#oOT-display").show();
 	wrong++;
 	console.log(wrong);
 	number = startAt;
@@ -194,15 +206,18 @@ function results() {
 	clearTimeout(counter2);
 	$("#game-display").hide();
 	$("#game-over").show();
+	$("#correct-results").html(correct);
+	$("#wrong-results").html(wrong);
 }
 
-
-
-
-
-
-
-
-
-
+$("#play-again").on("click", function() {
+	correct = 0;
+	wrong = 0;
+	currentQuestion = 0;
+	$("#game-over").hide();
+	$("#game-display").show();
+	startGame();
 });
+
+
+}); //document ready

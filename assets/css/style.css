@@ -1,5 +1,68 @@
+
 #correct-display,
 #wrong-display,
+#oOT-display,
 #game-over {
 	display: none;
+}
+
+body {
+	background-image: url("http://4.bp.blogspot.com/-py2GwU7fsWk/UB0dd4ig0YI/AAAAAAAAAoc/MHeMtupKVS8/s1600/zelda_items.jpg");
+
+}
+
+
+
+#game {
+	border: 3px solid #ADC039;
+	margin: 100px 300px;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	font-family: 'Press Start 2P', cursive;
+	background: green;
+	min-height: 500px;
+}
+
+#title-container {
+	position: relative;
+	bottom: 20px;
+}
+
+#intro {
+	position: relative;
+	top: 50px;
+}
+
+
+
+#clock {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 50px;
+	color: #d4ce46;
+}
+
+#question-container {
+	margin: 20px;
+	color: white;
+}
+
+.answer-choice {
+	margin: 10px;
+	color: darkblue;
+}
+
+.answer-choice:hover {
+	border: 2px solid #ADC039;
+	background: #ccffbb;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+
+button {
+	width: 100px;
+	height: 50px;
+	background: #d4ce46;
+	position: relative;
+	top: 100px;
+
 }
