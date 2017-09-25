@@ -43,6 +43,12 @@ var currentQuestion = 0;
 var inBetween = 3;
 var number2 = inBetween;
 
+var wrongImages = ["assets/images/wrong1.gif", "assets/images/wrong2.webp", "assets/images/wrong3.webp", "assets/images/wrong4.gif", "assets/images/wrong5.gif", "assets/images/wrong6.gif"];
+var correctImages = ["assets/images/correct1.webp", "assets/images/correct2.gif", "assets/images/correct3.gif", "assets/images/correct4.gif", "assets/images/correct5.gif", "assets/images/correct6.gif"]
+
+//var correctImg = correctImages[Math.floor(Math.random()*correctImages.length)];
+
+
 function time() {
 	$("#clock").html(number);
 }
@@ -151,6 +157,7 @@ function correctPage() {
 	$("#question-container").hide();
 	$("#choices").hide();
 	$("#correct-display").show();
+	$("#correct-img").html("<img src='" + correctImages[Math.floor(Math.random()*correctImages.length)] + "'>");
 	correct++;
 	console.log(correct);
 	number = startAt;
@@ -161,6 +168,7 @@ function wrongPage() {
 	$("#question-container").hide();
 	$("#choices").hide();
 	$("#wrong-display").show();
+	$("#wrong-img").html("<img src='" + wrongImages[Math.floor(Math.random()*wrongImages.length)] + "'>");
 	wrong++;
 	console.log(wrong);
 	number = startAt;
