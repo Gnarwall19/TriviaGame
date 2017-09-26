@@ -43,6 +43,8 @@ var currentQuestion = 0;
 var inBetween = 3;
 var number2 = inBetween;
 
+var song = new Audio("assets/audio/theme.mp3");
+
 var wrongImages = ["assets/images/wrong1.gif", "assets/images/wrong2.webp", "assets/images/wrong3.webp", "assets/images/wrong4.gif", "assets/images/wrong5.gif", "assets/images/wrong6.gif"];
 var correctImages = ["assets/images/correct1.webp", "assets/images/correct2.gif", "assets/images/correct3.gif", "assets/images/correct4.gif", "assets/images/correct5.gif", "assets/images/correct6.gif"]
 
@@ -80,6 +82,8 @@ $("#start").on("click", function() {
 });
 
 function startGame() {
+	song.loop = true;
+	song.play();
 	$("#start").hide();
 	$("#intro").hide();
 	time();
@@ -101,7 +105,7 @@ function game() {
 function nextQuestion() {
 	$("#correct-display").hide();
 	$("#wrong-display").hide();
-	$("oOT-display").hide();
+	$("#oOT-display").hide();
 	$("#question-container").show();
 	$("#choices").show();
 	currentQuestion++;

@@ -26,11 +26,14 @@ body {
 #title-container {
 	position: relative;
 	bottom: 20px;
+	color: #d4ce46;
+	font-weight: bold;
 }
 
 #intro {
 	position: relative;
 	top: 50px;
+	color: #0af6ff;
 }
 
 
@@ -47,15 +50,15 @@ body {
 }
 
 .answer-choice {
-	margin: 10px;
+	margin-bottom: 30px;
 	color: darkblue;
 }
 
 .answer-choice:hover {
 	border: 2px solid #ADC039;
 	background: #ccffbb;
-	margin-left: 150px;
-	margin-right: 150px;
+	/*margin-left: 150px;
+	margin-right: 150px;*/
 }
 
 button {
